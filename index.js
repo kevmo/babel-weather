@@ -1,3 +1,7 @@
+import http from 'http';
+
+import { helpers, logger} from './helpers';
+
 const cities = [{name:'London', weather:'gorge'},
                 {name: 'DC', weather: 'ugly'},
                 {name: 'Nashville', weather: 'beautiful'}];
@@ -23,3 +27,9 @@ const kevmo = {name: 'kevin moore', age: 31, hair: 'sort of'};
 const {age, name} = kevmo;
 
 console.log(`${name} is ${age}`);
+
+logger.log("THIS  IS WORKING");
+
+http.get('http://restcountries.eu/rest/v1/all', function(data){
+    console.log(data)
+})
